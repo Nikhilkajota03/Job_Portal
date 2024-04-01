@@ -1,0 +1,18 @@
+docker build . -t node-image:1
+
+docker run -d -p 8001:8080 node-image:1
+
+docker logs gifted_rhodes   //for logs of container
+
+docker exec -it ce1edb63c /bin/sh      //to see all the files
+
+docker run -d -p 8002:4000 -v "D:\Dekstop projects\Deployed project\Job-Portal\Job_Portal\backend:/app" -e PORT=4000 --name gifted_rhodes node-image:1    //to pass enviroment variable
+
+docker run -d -p 8004:4000 -v "D:\Dekstop projects\Deployed project\Job-Portal\Job_Portal\backend:/app" -e PORT=4000 -e CLOUDINARY_CLIENT_NAME=nikhil-cloud-007  -e CLOUDINARY_CLIENT_API=222697834828887  -e CLOUDINARY_CLIENT_SECRET=AMalX-MpwDuCk54IB_ptyxHcslE  -e FRONTEND_URL=http://localhost:5173  -e MONGO_URI="mongodb+srv://nikhilkajota9413750125:nikhilkajota@cluster0.ojblfxv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"  -e JWT_SECRET_KEY=dadjbnjaeq4q455njnop -e JWT_EXPIRES=7d    -e COOKIE_EXPIRE=5  --name job_portal_container_1  job_portal_img_1
+
+
+Invoke-WebRequest -Uri http://localhost:8004                 //to see logs of local host 
+
+
+
+
