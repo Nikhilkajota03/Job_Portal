@@ -22,6 +22,8 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
       new ErrorHandler("Invalid file type. Please upload a PNG file.", 400)
     );
   }
+
+  console.log("resume path" , resume.tempFilePath);
   const cloudinaryResponse = await cloudinary.uploader.upload(
     resume.tempFilePath
   );
