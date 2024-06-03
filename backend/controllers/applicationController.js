@@ -24,6 +24,7 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
   }
 
   console.log("resume path" , resume.tempFilePath);
+  console.log("resume" , resume)
   const cloudinaryResponse = await cloudinary.uploader.upload(
     resume.tempFilePath
   );
